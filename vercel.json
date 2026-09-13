@@ -2,20 +2,8 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/cache/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "index.js"
-    }
+  "rewrites": [
+    { "source": "/cache/(.*)", "destination": "/index.js" },
+    { "source": "/(.*)", "destination": "/index.js" }
   ]
 }
